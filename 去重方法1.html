@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            div {
+                    width: 100px;
+                    height: 30px;
+                    line-height: 30px;;
+                    border-radius: 10px;
+                    border: 1px solid #5098a5;
+                    text-align: center;
+                    cursor: pointer;
+                }
+            </style>
+</head>
+<body>
+    <div id="t0"></div>
+    <div id="t1"></div>
+    <div id="t2"></div>
+    <div id="t3"></div>
+    <div id="t4"></div>
+    <div id="t5"></div>
+    <button type="button" id="cilck" onclick="ggg()">点击生成</button>
+</body>
+<script>
+    function ggg(){
+        //sjs 随机数
+        var sjs =[parseInt(Math.random()*33+1)];//1-33随机数
+        while(sjs.length<6){//六个球 所以长度小于6
+         var bj=parseInt(Math.random()*33+1);
+         for(var i=0;i<sjs.length;i++){
+             if(sjs[i]==bj){
+                 break;
+             }else if(i==sjs.length-1){
+                 sjs.push(bj);
+             }
+         }
+
+        }
+
+        sjs.sort(function compare(a,b){
+            return a-b;
+        })
+
+        for(var i=0;i<sjs.length;i++){
+            document.getElementById('t'+i+'').innerHTML=sjs[i];
+        }
+    }
+
+
+   
+
+</script>
+</html>

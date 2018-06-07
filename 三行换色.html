@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+    td {
+         height: 50px;
+         width: 500px;
+    }
+</style>
+</head>
+<body>
+    <table border="1px">
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+        <tr><td></td></tr>
+    </table>
+</body>
+<script>
+   window.onload=function(){
+        var tb=document.getElementById("table");
+        var t=document.getElementsByTagName("tr");
+        for(var i=0;i<t.length;i++){
+            var o=parseInt(i/3);
+            if(o%2==0){
+                t[i].style.backgroundColor="red";
+            }else{
+                t[i].style.backgroundColor="blue";
+            }
+        }
+
+   }
+
+</script>
+</html>

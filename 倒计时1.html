@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<span style="font-size: 100px"></span>
+</body>
+<script>
+    window.onload=function(){
+        var oSpan=document.getElementsByTagName("span")[0];
+        var oTarget=new Date();
+        oTarget.setFullYear(2018,7,31);
+        oTarget.setHours(0,0,0,0);
+        var iTarget=oTarget.getTime();
+        function countD(){
+            var oDate=new Date();
+            var iNow=oDate.getTime();
+            var sY=parseInt((iTarget-iNow)/1000);
+            var d=parseInt(sY/86400);
+            sY%=86400;
+            var h=parseInt(sY/3600);
+            sY%=3600;
+            var m=parseInt(sY/60);
+            sY%=60;
+            oSpan.innerHTML=`${d}天${h}:${m}:${sY}`;
+
+
+        }
+        countD();
+        setInterval(countD,1000);
+
+    }
+</script>
+</html>
